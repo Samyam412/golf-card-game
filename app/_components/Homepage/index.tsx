@@ -1,6 +1,10 @@
 "use client";
 
 import { Users, Eye, Shuffle, Crown, Target, Trophy } from "lucide-react";
+import FeatureCard from "./FeatureCard";
+import RuleSection from "./RuleSection";
+import RuleItem from "./RuleItem";
+import PowerCard from "./PowerCard";
 
 export default function Homepage() {
   return (
@@ -150,85 +154,5 @@ export default function Homepage() {
         <p>Ready to test your memory and strategy? Start playing now!</p>
       </footer>
     </main>
-  );
-}
-
-function FeatureCard({
-  icon,
-  title,
-  description,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}) {
-  return (
-    <div className="flex flex-col items-center text-center p-[3vmin] rounded-xl bg-card border border-border hover:shadow-lg transition-shadow">
-      <div className="mb-[2vmin] text-primary">{icon}</div>
-      <h3 className="text-[2.5vmin] font-semibold mb-[1vmin]">{title}</h3>
-      <p className="text-[2vmin] text-muted-foreground leading-relaxed">
-        {description}
-      </p>
-    </div>
-  );
-}
-
-function RuleSection({
-  title,
-  children,
-}: {
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="bg-card border border-border rounded-xl p-[4vmin] shadow-sm">
-      <h3 className="text-[3.5vmin] font-semibold mb-[3vmin] flex items-center gap-[1.5vmin]">
-        {title}
-      </h3>
-      <div className="space-y-[2vmin]">{children}</div>
-    </div>
-  );
-}
-
-function RuleItem({
-  icon,
-  children,
-}: {
-  icon: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="flex items-start gap-[2vmin]">
-      <span className="text-[2.5vmin] flex-shrink-0 mt-[0.5vmin]">{icon}</span>
-      <p className="text-[2.2vmin] text-foreground/90 leading-relaxed">
-        {children}
-      </p>
-    </div>
-  );
-}
-
-function PowerCard({
-  card,
-  icon,
-  description,
-}: {
-  card: string;
-  icon: React.ReactNode;
-  description: string;
-}) {
-  return (
-    <div className="flex items-start gap-[2vmin] p-[2.5vmin] bg-muted/30 rounded-lg border border-border/50">
-      <div className="flex items-center justify-center min-w-[6vmin] h-[6vmin] bg-primary/10 rounded-lg text-primary font-bold text-[2vmin]">
-        {card}
-      </div>
-      <div className="flex-1">
-        <div className="flex items-center gap-[1vmin] mb-[0.5vmin] text-primary">
-          {icon}
-        </div>
-        <p className="text-[1.9vmin] text-foreground/80 leading-relaxed">
-          {description}
-        </p>
-      </div>
-    </div>
   );
 }
