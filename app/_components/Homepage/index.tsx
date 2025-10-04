@@ -1,6 +1,15 @@
 "use client";
 
 import { Users, Eye, Shuffle, Crown, Target, Trophy } from "lucide-react";
+
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import FeatureCard from "./FeatureCard";
 import RuleSection from "./RuleSection";
 import RuleItem from "./RuleItem";
@@ -28,9 +37,27 @@ export default function Homepage() {
             win!
           </p>
 
-          <button className="mt-[2vmin] px-[4vmin] py-[2vmin] bg-primary text-primary-foreground rounded-lg text-[2.2vmin] font-semibold hover:bg-primary/90 transition-colors">
-            Start Playing
-          </button>
+          <Dialog>
+            <DialogTrigger className="mt-[2vmin] px-[4vmin] py-[2vmin] bg-primary text-primary-foreground rounded-lg text-[2.2vmin] font-semibold hover:bg-primary/90 transition-colors">
+              Start Playing
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle className="text-[2.2vmin] font-semibold">
+                  Create room
+                </DialogTitle>
+                <DialogDescription>
+                  Create a room to play with friends.
+                </DialogDescription>
+              </DialogHeader>
+              <DialogHeader>
+                <DialogTitle>Join room</DialogTitle>
+                <DialogDescription>
+                  Join a room to play with friends.
+                </DialogDescription>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
         </div>
       </section>
 
